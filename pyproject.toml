@@ -26,12 +26,17 @@ dev = [
     "versioningit"
 ]
 
-
 [tool.versioningit]
 vcs = "git"
 style = "pep440"
 tag_regex = "^v(?P<version>\\d+\\.\\d+\\.\\d+)$"
 
+[tool.versioningit.format]
+distance = ".dev{distance}+g{commitid}"
+dirty = "{version}.dirty"
+
+[tool.versioningit.onbuild]
+default-version = "0.0.99versionNotFound"
 
 [tool.black]
 line-length = 88
