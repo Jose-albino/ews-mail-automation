@@ -69,3 +69,5 @@ testpaths = [
     "tests/integration",
     "tests/system"
 ]
+[tool.coverage.run]
+branch = true
