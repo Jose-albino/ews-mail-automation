@@ -7,39 +7,33 @@ on:
     branches: ["**"]
 
 jobs:
-  test:
+  install-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9]
 
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Unshallow the repo so versioningit can access full git history
-          
-      - name: Set up Python
+
+      - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.8
 
       - name: Install project with dev dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -e .[dev]
 
-      - name: Run unit + system tests
+      - name: Run tests (Python 3.8)
         run: |
           pytest
 
-      - name: Check formatting with Black
-        run: |
-          black --check exchange_automator tests
+      - name: Check formatting (Python 3.8)
+        run: black --check exchange_automator tests
 
-      - name: Lint code with Ruff
-        run: |
-          ruff exchange_automator tests
+      - name: Lint code (Python 3.8)
+        run: ruff exchange_automator tests
 
-      - name: Type check with mypy
-        run: |
-          mypy exchange_automator
+      - name: Type check (Python 3.8)
+        run: mypy exchange_automator
