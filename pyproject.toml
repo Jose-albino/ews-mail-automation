@@ -10,8 +10,13 @@ license = { text = "MIT" }
 urls = { "Homepage" = "https://github.com/jose-albino/ews-mail-automation" }
 authors = [{ name = "Jose Albino", email = "pypi-packages-email.pendant519@passmail.com" }]
 requires-python = ">=3.8"
-dependencies = []
+dependencies = [
+    "exchangelib",
+    "requests"
+]
 
+[project.scripts]
+exchange-automator = "exchange_automator.cli:main"
 
 [project.optional-dependencies]
 dev = [
