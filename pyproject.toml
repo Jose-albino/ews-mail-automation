@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "exchange-automator"
+version = "0.0.0"  # dummy version versioningit will override this
 description = "Python package for automating Exchange tasks via EWS"
 readme = "Readme.md"
 license = { text = "MIT" }
@@ -28,7 +29,7 @@ dev = [
     "nox",
     "pre-commit",
     "twine",
-    "versioningit"
+    "versioningit>=3.0.0"
 ]
 
 [tool.setuptools]
