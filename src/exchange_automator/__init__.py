@@ -1,1 +1,1 @@
-from exchange_automator._version import __version__  # <- dynamically injected by versioningit
+from exchange_automator.__version import __version__  # <- dynamically injected by versioningit
