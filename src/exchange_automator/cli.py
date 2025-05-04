@@ -1,5 +1,5 @@
 import argparse
-from my_package import __version__
+from exchange_automator import __version__
 
 def main():
     parser = argparse.ArgumentParser(description="My Package CLI")
