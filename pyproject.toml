@@ -39,15 +39,11 @@ where = ["src"]
 
 [tool.versioningit]
 vcs = "git"
-style = "pep440"
-tag_regex = "^v(?P<version>\\d+\\.\\d+\\.\\d+)$"
+fallback-version = "0.0.99versionNotFound"
 
 [tool.versioningit.format]
 distance = ".dev{distance}+g{commitid}"
 dirty = "{version}.dirty"
-
-[tool.versioningit.onbuild]
-default-version = "0.0.99versionNotFound"
 
 [tool.black]
 line-length = 88
@@ -69,5 +65,6 @@ testpaths = [
     "tests/integration",
     "tests/system"
 ]
+
 [tool.coverage.run]
 branch = true
