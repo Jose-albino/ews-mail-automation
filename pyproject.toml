@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=62", "wheel", "versioningit"]
+requires = ["setuptools>=62", "wheel", "versioningit>=3.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -40,12 +40,15 @@ where = ["src"]
 [tool.versioningit]
 vcs = "git"
 
+[tool.versioningit.fields]
+commitid = { method = "git", attr = "commit" }
+
 [tool.versioningit.onbuild]
 default-version = "0.0.99versionNotFound"
 
 [tool.versioningit.format]
-distance = ".dev{distance}+g{commitid}"
-dirty = "{version}.dirty"
+method = "basic"
+format = "{version}"
 
 [tool.black]
 line-length = 88
