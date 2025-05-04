@@ -31,6 +31,12 @@ dev = [
     "versioningit"
 ]
 
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.versioningit]
 vcs = "git"
 style = "pep440"
