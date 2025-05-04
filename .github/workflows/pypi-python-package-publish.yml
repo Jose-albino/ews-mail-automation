@@ -1,5 +1,10 @@
 name: CI
 
+push:
+  branches: ["**"]
+pull_request:
+  branches: ["**"]
+    
 jobs:
   test:
     runs-on: ubuntu-latest
