@@ -7,8 +7,8 @@ name = "exchange-automator"
 description = "Python package for automating Exchange tasks via EWS"
 readme = "Readme.md"
 license = { text = "MIT" }
+urls = { "Homepage" = "https://github.com/jose-albino/ews-mail-automation" }
 authors = [{ name = "Jose Albino", email = "pypi-packages-email.pendant519@passmail.com" }]
-url = "https://github.com/jose-albino/ews-mail-automation"
 requires-python = ">=3.8"
 dependencies = []
 
