@@ -39,7 +39,7 @@ where = ["src"]
 
 [tool.versioningit]
 vcs = "git"
-fallback-version = "0.0.99versionNotFound"
+default-version = "0.0.99versionNotFound"
 
 [tool.versioningit.format]
 distance = ".dev{distance}+g{commitid}"
