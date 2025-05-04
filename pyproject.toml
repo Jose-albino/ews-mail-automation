@@ -39,6 +39,8 @@ where = ["src"]
 
 [tool.versioningit]
 vcs = "git"
+
+[tool.versioningit.onbuild]
 default-version = "0.0.99versionNotFound"
 
 [tool.versioningit.format]
