@@ -55,6 +55,25 @@ format = "{version}"
 line-length = 88
 target-version = ["py38"]
 
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.tox
+  | \.venv
+  | dist
+  | build
+  | __pycache__
+)/
+'''
+
+
+[tool.twine]
+# No specific configuration needed in pyproject.toml for Twine at this time.
+
 [tool.ruff]
 line-length = 88
 select = ["E", "F", "I"]
