@@ -74,3 +74,12 @@ testpaths = [
 
 [tool.coverage.run]
 branch = true
+source = ["exchange_automator"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 80
+
+[tool.coverage.html]
+directory = "htmlcov"
