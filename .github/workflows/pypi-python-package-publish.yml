@@ -31,13 +31,13 @@ jobs:
 
       - name: Run tests (Python 3.8)
         run: |
-          pytest -vv
+          pytest
 
       - name: Check formatting (Python 3.8)
-        run: black --check exchange_automator tests
+        run: black --check
 
       - name: Lint code (Python 3.8)
-        run: ruff exchange_automator tests
+        run: ruff src/exchange_automator tests
 
       - name: Type check (Python 3.8)
-        run: mypy exchange_automator
+        run: mypy src/exchange_automator
