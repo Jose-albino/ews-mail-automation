@@ -53,10 +53,6 @@ format = "{version}"
 
 [tool.black]
 line-length = 88
-target-version = ["py38"]
-
-[tool.black]
-line-length = 88
 target-version = ['py38']
 include = '\.pyi?$'
 exclude = '''
@@ -88,7 +84,8 @@ addopts = "--strict-markers --tb=short --cov=src/exchange_automator"
 testpaths = [
     "tests/unit",
     "tests/integration",
-    "tests/system"
+    "tests/system",
+    "tests"
 ]
 
 [tool.coverage.run]
