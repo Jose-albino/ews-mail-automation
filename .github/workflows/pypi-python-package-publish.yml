@@ -24,14 +24,14 @@ jobs:
       - name: Install project with dev dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e .[dev]
+          pip install .[dev]
           pip freeze
           ls *
           exchange-automator -v
 
       - name: Run tests (Python 3.8)
         run: |
-          pytest
+          pytest -vv
 
       - name: Check formatting (Python 3.8)
         run: black --check exchange_automator tests
