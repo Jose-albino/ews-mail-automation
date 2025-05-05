@@ -65,7 +65,7 @@ python_version = 3.8
 strict = true
 
 [tool.pytest.ini_options]
-addopts = "--strict-markers --tb=short --cov=exchange-automator"
+addopts = "--strict-markers --tb=short --cov=src/exchange_automator"
 testpaths = [
     "tests/unit",
     "tests/integration",
