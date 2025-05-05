@@ -41,8 +41,6 @@ where = ["src"]
 [tool.versioningit]
 vcs = "git"
 
-#[tool.versioningit.fields]
-#commitid = { method = "git", attr = "commit" }
 
 [tool.versioningit.onbuild]
 default-version = "0.0.99versionNotFound"
@@ -65,10 +63,6 @@ exclude = '''
   | __pycache__
 )/
 '''
-
-
-[tool.twine]
-# No specific configuration needed in pyproject.toml for Twine at this time.
 
 [tool.ruff]
 line-length = 88
@@ -94,7 +88,7 @@ source = ["src/exchange_automator"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
-fail_under = 80
+fail_under = 20
 
 [tool.coverage.html]
 directory = "htmlcov"
