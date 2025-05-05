@@ -84,8 +84,7 @@ addopts = "--strict-markers --tb=short --cov=src/exchange_automator"
 testpaths = [
     "tests/unit",
     "tests/integration",
-    "tests/system",
-    "tests"
+    "tests/system"
 ]
 
 [tool.coverage.run]
