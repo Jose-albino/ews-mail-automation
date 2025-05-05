@@ -3,7 +3,7 @@ import sys
 
 def test_cli_reports_correct_version(package_version):
     result = subprocess.run(
-        [sys.executable, "-m", "exchange-automator", "-v"],
+        ["exchange-automator", "-v"],
         capture_output=True,
         text=True
     )
