@@ -41,6 +41,8 @@ where = ["src"]
 [tool.versioningit]
 vcs = "git"
 
+#[tool.versioningit.fields]
+#commitid = { method = "git", attr = "commit" }
 
 [tool.versioningit.onbuild]
 default-version = "0.0.99versionNotFound"
@@ -74,7 +76,7 @@ python_version = 3.8
 strict = true
 
 [tool.pytest.ini_options]
-addopts = "--strict-markers --tb=short --cov=src/exchange_automator"
+addopts = "--strict-markers --tb=short --cov=exchange_automator --cov-report=term-missing"
 testpaths = [
     "tests/unit",
     "tests/integration",
@@ -88,7 +90,7 @@ source = ["src/exchange_automator"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
-fail_under = 20
+fail_under = 60
 
 [tool.coverage.html]
 directory = "htmlcov"
