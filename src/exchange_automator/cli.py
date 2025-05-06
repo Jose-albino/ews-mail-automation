@@ -5,7 +5,7 @@ from exchange_automator import __version__
 description = "Exchange Automator"
 
 
-def main():
+def main()->None:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("-v", "--version", action="store_true", help="Show version")
     args = parser.parse_args()
