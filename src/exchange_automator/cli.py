@@ -1,4 +1,5 @@
 import argparse
+
 from exchange_automator import __version__
 
 description = "Exchange Automator"
