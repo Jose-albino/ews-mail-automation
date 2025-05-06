@@ -1,7 +1,8 @@
 import argparse
 from exchange_automator import __version__
 
-description="Exchange Automator"
+description = "Exchange Automator"
+
 
 def main():
     parser = argparse.ArgumentParser(description=description)
