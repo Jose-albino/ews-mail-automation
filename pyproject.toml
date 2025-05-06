@@ -76,7 +76,7 @@ python_version = 3.8
 strict = true
 
 [tool.pytest.ini_options]
-addopts = "--strict-markers --tb=short --cov=exchange_automator --cov-report=term-missing"
+addopts = "--strict-markers --tb=short --cov=exchange_automator"
 testpaths = [
     "tests/unit",
     "tests/integration",
