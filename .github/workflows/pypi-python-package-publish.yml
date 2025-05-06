@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests (Python 3.8)
         run: |
-          pytest  --debug=coverage
+          pytest
 
       - name: Check formatting (Python 3.8)
         run: black --check .
