@@ -2,9 +2,10 @@ iname: CI
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main", "develop"]
   pull_request:
-    branches: ["**"]
+    branches: ["main", "develop"]
+  workflow_dispatch:  # Allows manual triggering from GitHub Actions UI
 
 jobs:
   install-and-test:
@@ -21,6 +22,14 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install project with dev dependencies
         run: |
           python -m pip install --upgrade pip
@@ -31,7 +40,7 @@ jobs:
 
       - name: Run tests (Python 3.8)
         run: |
-          pytest
+          pytest --maxfail=5 -q
 
       - name: Check formatting (Python 3.8)
         run: black --check .
@@ -41,3 +50,6 @@ jobs:
 
       - name: Type check (Python 3.8)
         run: mypy src/exchange_automator
+
+      - name: Security check (Python 3.8)
+        run: bandit -r src/exchange_automator

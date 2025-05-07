@@ -1,0 +1,46 @@
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python for ruamel.yaml and yamllint
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      # Step 3: Install ruamel.yaml (for formatting) and yamllint (for linting)
+      - name: Install ruamel.yaml and yamllint
+        run: |
+          pip install --upgrade pip
+          pip install ruamel.yaml yamllint
+
+      # Step 4: Auto-format YAML files with ruamel.yaml
+      - name: Auto-format YAML files
+        run: |
+          python - <<EOF
+          import glob
+          from ruamel.yaml import YAML
+
+          yaml = YAML()
+
+          # Find all YAML files
+          yaml_files = glob.glob("**/*.yml", recursive=True) + glob.glob("**/*.yaml", recursive=True)
+
+          for file in yaml_files:
+              with open(file, 'r') as f:
+                  data = yaml.load(f)
+
+              with open(file, 'w') as f:
+                  yaml.dump(data, f)
+
+          print(f"Formatted {len(yaml_files)} YAML files.")
+          EOF
+
+      # Step 5: Lint YAML files with yamllint
+      - name: Lint YAML files
+        run: yamllint '**/*.yml' '**/*.yaml'
