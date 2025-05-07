@@ -1,0 +1,53 @@
+== Setting up pre-commit hooks
+
+This project uses `pre-commit` to ensure code quality and consistency. Follow these steps to set it up:
+
+=== 1. Install pre-commit
+
+Make sure you have Python and `pip` installed. Then, install `pre-commit` using pip:
+
+```bash
+pip install pre-commit
+```
+
+=== 2. Install the hooks
+
+Navigate to the project's root directory (where the `.pre-commit-config.yaml` file is located) and run:
+
+```bash
+pre-commit install
+```
+This installs the hooks defined in `.pre-commit-config.yaml` into your local Git repository's hooks directory.
+
+=== 3. Usage
+
+Now, before each commit, `pre-commit` will automatically run the configured hooks (e.g., `black`, `ruff`, `mypy`).  If any of the hooks fail (e.g., formatting issues), the commit will be aborted. You'll need to fix the issues and then try committing again.
+
+You can also run the hooks manually on all files using:
+
+```bash
+pre-commit run --all-files
+```
+
+Or on specific files:
+
+```bash
+pre-commit run <file1> <file2> ...
+```
+
+=== 4. Updating Hooks
+
+To update the hooks to their latest versions (as specified in `.pre-commit-config.yaml`), run:
+
+```bash
+pre-commit autoupdate
+```
+
+=== 5. Skipping Hooks
+
+If you need to skip the pre-commit hooks for a specific commit, use the `--no-verify` option:
+
+```bash
+git commit -m "Your commit message" --no-verify
+```
+However, this is generally discouraged as it bypasses important code quality checks.
